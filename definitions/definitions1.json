@@ -20,4 +20,16 @@
 		"application/json",
 		"text/html"
 	],
+	"paths": {
+		"/health": {
+			"get": {
+				"summary": "Get Application Health",
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		}
+	}
 }
