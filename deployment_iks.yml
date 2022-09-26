@@ -44,15 +44,17 @@ spec:
     spec:
       serviceAccountName: sample
       containers:
-      - name: node-compliance-app
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "1000m"
-        image: webapp:1
+      - name: javaspringapp
+        image: javaspringapp:latest
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 20
+         resources:
+           requests:
+             cpu: 100m
+             memory: 1000Mi
         # for local development against minikube registry
         imagePullPolicy: Always
         ports:
