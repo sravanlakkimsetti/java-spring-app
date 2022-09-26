@@ -45,7 +45,7 @@ spec:
       serviceAccountName: sample
       containers:
       - name: javaspringapp
-        image: javaspringapp:latest
+        image: java-spring-app:latest
         readinessProbe:
           httpGet:
             path: /health
